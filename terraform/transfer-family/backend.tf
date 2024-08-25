@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "Sftp-Server-State-Project-Backend"
+    bucket = "sftp-server-state-project-backend"
     dynamodb_table = "Sftp-Server-Lock-DynamoDB-Table"
     key = "sftp/terraform/tfstate"
     encrypt = true
