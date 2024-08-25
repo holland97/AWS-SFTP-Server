@@ -7,7 +7,7 @@ variable "region" {
 variable "s3" {
   description = "Name of S3 bucket to be used as backend to store state"
   type        = string
-  default     = "Sftp-Server-State-Project-Backend"
+  default     = "sftp-server-state-project-backend"
 
 }
 
