@@ -14,6 +14,6 @@ variable "s3" {
 variable "dynamodbtable" {
   description = "Name of DynamoDB Table for locks"
   type        = string
-  default     = "Sftp-Server-Lock-DynamoDB-Table"
+  default     = "sftp-server-lock-dynamodb-table"
 }
 
