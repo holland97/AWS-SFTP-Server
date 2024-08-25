@@ -1,0 +1,40 @@
+version: 2.1
+
+orbs:
+  terraform: circleci/terraform@3.1
+
+jobs:
+  Creating-Backend-Resources:
+    executor:
+      name: terraform/default
+    steps:
+      - checkout
+      - terraform/init:
+          path: ./terraform/s3
+      - terraform/fmt:
+          path: ./terraform/s3
+      - terraform/apply:
+          path: ./terraform/s3
+
+  Creating-SFTP-Server:
+    executor:
+      name: terraform/default
+    steps:
+      - checkout
+      - terraform/init:
+          path: ./terraform/transfer-family
+      - terraform/plan:
+          path: ./terraform/transfer-family
+      - terraform/apply:
+          path: ./terraform/transfer-family
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - Creating-Backend-Resources:
+          context: test
+      - Creating-SFTP-Server:
+          context: test
+          requires:
+            - Creating-Backend-Resources
