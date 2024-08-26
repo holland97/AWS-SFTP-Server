@@ -7,3 +7,8 @@ In this project, I set up a secure SFTP server using AWS Transfer Family, which 
 5. Generate user account with correct role and home directory
 6. Generate SSH keys that the user can use to connect to the server
 7.  Make S3 bucket with correct permissions that will store files & folders
+
+Resources:   
+https://docs.aws.amazon.com/transfer/latest/userguide/users-policies-all-access.html
+https://docs.aws.amazon.com/transfer/latest/userguide/create-server-sftp.html
+
